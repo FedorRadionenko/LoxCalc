@@ -1,0 +1,112 @@
+﻿<Window x:Class="LoxCalc_remake.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoxCalc_remake"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10,10,2,58" HorizontalAlignment="Center" VerticalAlignment="Center" Width="780">
+        <GroupBox x:Name="Lat1Box" Header="First Point Latitude" HorizontalAlignment="Left" Height="154" Margin="22,20,0,0" VerticalAlignment="Top" Width="237" FontSize="14">
+            <Grid Margin="2,0,-2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column ="0" Grid.Row="0" x:Name="Lat1Deg" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" TextWrapping="Wrap" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat1Deg_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="1" x:Name="Lat1Min" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat1Min_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="2" x:Name="Lat1Sec" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat1Sec_TextChanged"/>
+                <Label Content="Degrees" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Minutes" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="43" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Seconds" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14" RenderTransformOrigin="0.578,0.735"/>
+                <RadioButton x:Name="Lat1North" Content="N" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" IsChecked="True" FontSize="14" Checked="Lat1North_Checked"/>
+                <RadioButton x:Name="Lat1South" Content="S" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" FontSize="14" Checked="Lat1South_Checked"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Long1Box" Header="First Point Longitute" HorizontalAlignment="Left" Height="154" Margin="302,20,0,0" VerticalAlignment="Top" Width="237" FontSize="14">
+            <Grid Margin="2,0,-2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column ="0" Grid.Row="0" x:Name="Long1Deg" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="3" TextChanged="Long1Deg_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="1" x:Name="Long1Min" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Long1Min_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="2" x:Name="Long1Sec" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Long1Sec_TextChanged"/>
+                <Label Content="Degrees" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Minutes" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="43" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Seconds" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14" RenderTransformOrigin="0.578,0.735"/>
+                <RadioButton x:Name="Long1East" Content="E" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" IsChecked="True" FontSize="14" Checked="Long1East_Checked"/>
+                <RadioButton x:Name="Long1West" Content="W" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" FontSize="14" Checked="Long1West_Checked"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Lat2Box" Header="Second Point Latitude" HorizontalAlignment="Left" Height="154" Margin="22,197,0,0" VerticalAlignment="Top" Width="237" FontSize="14">
+            <Grid Margin="2,0,-2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column ="0" Grid.Row="0" x:Name="Lat2Deg" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat2Deg_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="1" x:Name="Lat2Min" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat2Min_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="2" x:Name="Lat2Sec" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Lat2Sec_TextChanged"/>
+                <Label Content="Degrees" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Minutes" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="43" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Seconds" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14" RenderTransformOrigin="0.578,0.735"/>
+                <RadioButton x:Name="Lat2North" Content="N" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" IsChecked="True" FontSize="14" Checked="Lat2North_Checked"/>
+                <RadioButton x:Name="Lat2South" Content="S" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" FontSize="14" Checked="Lat2South_Checked"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="Long2Box" Header="Second Point Longitude" HorizontalAlignment="Left" Height="154" Margin="302,197,0,0" VerticalAlignment="Top" Width="237" FontSize="14">
+            <Grid Margin="2,0,-2,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column ="0" Grid.Row="0" x:Name="Long2Deg" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="3" TextChanged="Long2Deg_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="1" x:Name="Long2Min" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Long2Min_TextChanged"/>
+                <TextBox Grid.Column ="0" Grid.Row="2" x:Name="Long2Sec" HorizontalAlignment="Left" Height="20" Margin="8.521,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" FontSize="14" Grid.ColumnSpan="2" PreviewKeyDown="NoSpaceBar_input" PreviewTextInput="OnlyDigits_input" MaxLength="2" TextChanged="Long2Sec_TextChanged"/>
+                <Label Content="Degrees" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Minutes" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="43" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14"/>
+                <Label Content="Seconds" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Height="42" Margin="1,0,0,0" VerticalAlignment="Top" Width="74" FontSize="14" RenderTransformOrigin="0.578,0.735"/>
+                <RadioButton x:Name="Long2East" Content="E" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" IsChecked="True" FontSize="14" Checked="Long2East_Checked"/>
+                <RadioButton x:Name="Long2West" Content="W" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" Height="19" Margin="10,14,0,0" VerticalAlignment="Top" Width="44" FontSize="14" Checked="Long2West_Checked"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="ResultBox" Header="Result" HorizontalAlignment="Left" Height="183" Margin="556,20,0,0" VerticalAlignment="Top" Width="190" FontSize="14">
+            <Grid>
+                <StackPanel>
+                    <Label Content="Course" HorizontalAlignment="Left" Height="30" Margin="1,0,0,0" FontSize="14"/>
+                    <TextBox x:Name="ResultCourse" HorizontalAlignment="Left" Height="20" Width="80" FontSize="14" IsReadOnlyCaretVisible="True" IsReadOnly="True"/>
+                    <Label Content="Distance, km" HorizontalAlignment="Left" Height="30" Margin="1,0,0,0" FontSize="14"/>
+                    <TextBox x:Name="ResultDistKm" HorizontalAlignment="Left" Height="20" Width="80" FontSize="14" IsReadOnlyCaretVisible="True" IsReadOnly="True"/>
+                    <Label Content="Distance, mi" HorizontalAlignment="Left" Height="30" Margin="1,0,0,0" FontSize="14"/>
+                    <TextBox x:Name="ResultDistMi" HorizontalAlignment="Left" Height="20" Width="80" FontSize="14" IsReadOnlyCaretVisible="True" IsReadOnly="True"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="CalculateBtn" Content="Calculate" HorizontalAlignment="Left" Height="32" Margin="588,256,0,0" VerticalAlignment="Top" Width="101" FontSize="14" Click="CalculateBtn_Click"/>
+    </Grid>
+</Window>
